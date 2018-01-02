@@ -1,11 +1,11 @@
 /**
- * Example Block Two
+ * Editable Block Example
  *
- * https://github.com/modularwp/gutenberg-example-block-two
+ * https://github.com/modularwp/gutenberg-block-editable-example
  */
 ( function() {
 	var __                = wp.i18n.__; // The __() function for internationalization.
-	var el                = wp.element.createElement; // The wp.element.createElement() function to create elements.
+	var createElement     = wp.element.createElement; // The wp.element.createElement() function to create elements.
 	var registerBlockType = wp.blocks.registerBlockType; // The registerBlockType() function to register blocks.
 	var Editable          = wp.blocks.Editable; // For creating editable elements.
 
@@ -18,15 +18,15 @@
 	 *                             otherwise "undefined".
 	 */
 	registerBlockType(
-		'mdlr/example-block-two', // Block name. Must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
+		'mdlr/editable-block-example', // Block name. Must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 		{
-			title: __( 'Example Block Two', 'mdlr_textdomain' ), // Block title. __() function allows for internationalization.
-			icon: 'paperclip', // Block icon from Dashicons. https://developer.wordpress.org/resource/dashicons/.
+			title: __( 'Editable Block Example' ), // Block title. __() function allows for internationalization.
+			icon: 'unlock', // Block icon from Dashicons. https://developer.wordpress.org/resource/dashicons/.
 			category: 'common', // Block category. Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 			attributes: {
 				content: {
-					type: 'text',
-					default: 'Example Block Two',
+					type: 'string',
+					default: 'Editable block content...',
 				},
 			},
 
@@ -38,7 +38,7 @@
 					props.setAttributes( { content: updatedContent } );
 				}
 
-				return el(
+				return createElement(
 					Editable,
 					{
 						tagName: 'p',
@@ -53,7 +53,7 @@
 			save: function( props ) {
 				var content = props.attributes.content;
 
-				return el(
+				return createElement(
 					'p',
 					{
 						className: props.className,
