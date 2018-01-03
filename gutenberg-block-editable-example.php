@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Gutenberg Block Editable Example
+ * Plugin Name: Gutenberg Block: Editable Example
  * Plugin URI: https://github.com/modularwp/gutenberg-block-editable-example
  * Description: A example Gutenberg block with editable content.
  * Author: ModularWP
