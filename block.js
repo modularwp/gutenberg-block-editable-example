@@ -47,7 +47,7 @@
 						value: content,
 						onChange: onChangeContent,
 						focus: focus,
-             			onFocus: props.setFocus
+						onFocus: props.setFocus
 					},
 				);
 			},
