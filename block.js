@@ -33,6 +33,7 @@
 			// Defines the block within the editor.
 			edit: function( props ) {
 				var content = props.attributes.content;
+				var focus = props.focus;
 
 				function onChangeContent( updatedContent ) {
 					props.setAttributes( { content: updatedContent } );
@@ -44,7 +45,9 @@
 						tagName: 'p',
 						className: props.className,
 						value: content,
-						onChange: onChangeContent
+						onChange: onChangeContent,
+						focus: focus,
+             			onFocus: props.setFocus
 					},
 				);
 			},
