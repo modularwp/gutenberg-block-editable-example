@@ -56,12 +56,11 @@
 			save: function( props ) {
 				var content = props.attributes.content;
 
-				return createElement(
-					'p',
+				return createElement( RichText.Content,
 					{
-						className: props.className,
-					},
-					content
+						'tagName': 'div',
+						'value': content
+					}
 				);
 			},
 		}
